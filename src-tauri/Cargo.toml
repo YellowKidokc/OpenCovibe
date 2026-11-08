@@ -16,6 +16,7 @@ name = "OpenCovibe"
 path = "src/main.rs"
 
 [dependencies]
+top-of-mind-core = { path = "../crates/top-of-mind-core" }
 tauri = { version = "2", features = ["tray-icon", "image-png"] }
 tauri-plugin-notification = "2"
 tauri-plugin-dialog = "2"

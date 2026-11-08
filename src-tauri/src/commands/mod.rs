@@ -25,5 +25,6 @@ pub mod session;
 pub mod settings;
 pub mod stats;
 pub mod teams;
+pub mod top_of_mind;
 pub mod updates;
 pub mod web_server;

@@ -1,0 +1,26 @@
+{
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --test src/lib/*.test.js",
+    "test:browser": "node scripts/browser-smoke.cjs",
+    "cloudflare:build": "npm run build && wrangler pages functions build functions --outdir .cloudflare/functions --compatibility-date 2026-11-08",
+    "cloudflare:deploy": "npm run cloudflare:build && wrangler pages deploy dist"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.5.0",
+    "lucide-react": "^1.41.0",
+    "react": "latest",
+    "react-dom": "latest",
+    "vite": "latest"
+  },
+  "name": "top-of-mind",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "playwright": "^1.62.1",
+    "wrangler": "^4.158.0"
+  }
+}

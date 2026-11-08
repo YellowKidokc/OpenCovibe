@@ -1,0 +1,8 @@
+{
+  "build": {
+    "frontendDist": "../apps/top-of-mind/dist",
+    "devUrl": "http://localhost:5173",
+    "beforeDevCommand": "npm --prefix apps/top-of-mind run dev -- --port 5173 --strictPort",
+    "beforeBuildCommand": "npm --prefix apps/top-of-mind run build"
+  }
+}

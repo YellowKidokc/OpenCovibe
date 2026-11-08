@@ -36,7 +36,12 @@
     "verify": "npm run lint && npm run format:check && npm run check && npm run i18n:check && npm run test && npm run build && npm run rust:check",
     "release": "node scripts/release.mjs",
     "prebuild:dmg": "node scripts/clean-dmg.mjs",
-    "prepare": "git config core.hooksPath .githooks"
+    "prepare": "git config core.hooksPath .githooks",
+    "tom:dev": "npm --prefix apps/top-of-mind run dev -- --port 5173 --strictPort",
+    "tom:build": "npm --prefix apps/top-of-mind run build",
+    "tom:desktop": "tauri dev --config src-tauri/tauri.top-of-mind.conf.json",
+    "tom:hub": "cargo run --manifest-path crates/top-of-mind-core/Cargo.toml --features server --bin top-of-mind-hub",
+    "tom:test": "cargo test --manifest-path crates/top-of-mind-core/Cargo.toml --features server && npm --prefix apps/top-of-mind test"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",

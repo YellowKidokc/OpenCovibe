@@ -4,7 +4,7 @@ version = 4
 
 [[package]]
 name = "OpenCovibe"
-version = "0.2.0"
+version = "0.2.9"
 dependencies = [
  "axum",
  "base64 0.22.1",
@@ -37,6 +37,7 @@ dependencies = [
  "tokio-util",
  "toml 0.8.2",
  "toml_edit 0.22.27",
+ "top-of-mind-core",
  "tower-http 0.5.2",
  "url",
  "urlencoding",
@@ -1212,6 +1213,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cb4cb245038516f5f85277875cdaa4f7d2c9a0fa0468de06ed190163b1581fcf"
 dependencies = [
  "percent-encoding",
+]
+
+[[package]]
+name = "fs2"
+version = "0.4.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9564fc758e15025b46aa6643b1b77d047d1a56a1aea6e01002ac0c7026876213"
+dependencies = [
+ "libc",
+ "winapi",
 ]
 
 [[package]]
@@ -5044,6 +5055,19 @@ name = "toml_writer"
 version = "1.0.6+spec-1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ab16f14aed21ee8bfd8ec22513f7287cd4a91aa92e44edfe2c17ddd004e92607"
+
+[[package]]
+name = "top-of-mind-core"
+version = "0.1.0"
+dependencies = [
+ "fs2",
+ "futures-util",
+ "reqwest 0.12.28",
+ "serde",
+ "serde_json",
+ "tokio",
+ "uuid",
+]
 
 [[package]]
 name = "tower"

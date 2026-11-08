@@ -1,0 +1,25 @@
+[package]
+name = "top-of-mind-core"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+reqwest = { version = "0.12", features = ["json"] }
+tokio = { version = "1", features = ["full"] }
+uuid = { version = "1", features = ["v4"] }
+futures-util = "0.3"
+fs2 = "0.4"
+axum = { version = "0.7", optional = true }
+
+[features]
+server = ["dep:axum"]
+
+[[bin]]
+name = "top-of-mind-hub"
+path = "src/server.rs"
+required-features = ["server"]
+
+[dev-dependencies]
+tempfile = "3"

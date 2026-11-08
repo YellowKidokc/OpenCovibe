@@ -127,6 +127,7 @@ pub fn run() {
     let ws_warning = WebServerWarning(Arc::new(tokio::sync::RwLock::new(None)));
 
     let app = tauri::Builder::default()
+        .manage(commands::top_of_mind::TopOfMindState::default())
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_shell::init())
         .plugin(tauri_plugin_notification::init())
@@ -154,6 +155,7 @@ pub fn run() {
         // NOTE: Currently ~60 IPC commands. If approaching 80+, consider grouping
         // into Tauri command modules or using a single dispatch command with typed payloads.
         .invoke_handler(tauri::generate_handler![
+            commands::top_of_mind::tom_request,
             commands::runs::list_runs,
             commands::runs::get_run,
             commands::runs::start_run,
